@@ -1,65 +1,18 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title> Очковая оптика </title>
-  <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-    <header>
-        <img src="/logo.png" alt="Логотип"> <!-- Логотип сайта -->
-        <nav id="menu"> <!-- Меню -->
-            <ul>
-                <li><a href="/">Главная</a></li>
-                <li><a href="/catalog">Очки</a></li>
-                <li><a href="/catalog">Оправы</a></li>
-                <li><a href="/catalog">Линзы</a></li>
-                <li><a href="/about">О нас</a></li>
-                <li><a href="/contacts">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <aside>
+<html>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
         <div>
-            <a href="#">Баннер 1</a>
-            <a href="#">Баннер 2</a>
-            <a href="#">Баннер 3</a>
+            <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-    </aside>
 
-    <main>
-        <h1>Очковая оптика - лучшая оптика с широким выбором очков и оправ</h1>
-
-        <p>Мы считаем, что лучшая оптика сочетает в себе большой выбор очков + профессональный оптометрист + лучшие цены</p>
-
-        <section class="plus">
-            <h2>Преимущества</h2>
-
-            <ul>
-                <li>Большой выбор</li>
-                <li>Профессиональный оптометрист с многолетним опытом проверки зрения и подборки диоптриев</li>
-                <li>Программа лояльность для постоянных клиентов</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Новости</h2>
-
-            <article>
-                <h3>Новость 1</h3>
-                <p>Текст новости 1</p>
-                <a href="#">Подробнее</a>
-            </article>
-
-            <article>
-                <h3>Новость 2</h3>
-                <p>Текст новости 2</p>
-                <a href="#">Подробнее</a>
-            </article>
-
-        </section>
-    </main>
-
-</body>
+        {% for post in posts %}
+            <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </body>
 </html>
